@@ -54,7 +54,6 @@ public class ConnectHub {
 		final LoggedInViewModel loggedInViewModel = new LoggedInViewModel();
 		final SignupViewModel signupViewModel = new SignupViewModel();
 
-		// TODO Task 1.1 in a copy of this file, change this line to use the in-memory DAO.
 		final DBUserDataAccessObject userDataAccessObject = new DBUserDataAccessObject();
 
 		final SignupView signupView = SignupUseCaseFactory.create(viewManagerModel,

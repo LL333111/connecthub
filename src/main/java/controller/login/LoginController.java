@@ -11,6 +11,7 @@ public class LoginController {
     private final LoginInputBoundary loginInputBoundary;
 
     public LoginController(LoginInputBoundary loginInputBoundary) {
+
         this.loginInputBoundary = loginInputBoundary;
     }
 

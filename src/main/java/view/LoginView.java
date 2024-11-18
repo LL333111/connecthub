@@ -93,6 +93,7 @@ public class LoginView extends JPanel implements ActionListener, PropertyChangeL
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
                     //loginController.switchToSignupView();
+
             }
         });
 

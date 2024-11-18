@@ -1,5 +1,4 @@
 package controller.login;
-
 /**
  * The state for the Login View Model.
  */
