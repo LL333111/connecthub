@@ -37,7 +37,6 @@ public final class SignupUseCaseFactory {
         final SignupController signupController = createUserSignupUseCase(viewManagerModel, signupViewModel,
                 loginViewModel,userDataAccessObject);
         return new SignupView(signupController, signupViewModel);
-
     }
 
     private static SignupController createUserSignupUseCase(ViewManagerModel viewManagerModel,

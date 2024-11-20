@@ -24,4 +24,11 @@ public class LoginController {
         final LoginInputData loginInputData = new LoginInputData(username, password);
         loginInputBoundary.LoginUser(loginInputData);
     }
+
+    /**
+     * Executes the "switch to SignUpView" Use Case.
+     */
+    public void switchToSignupView() {
+        loginInputBoundary.switchToSignUpView();
+    }
 }

@@ -2,7 +2,6 @@ package view;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.border.Border;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -39,7 +38,7 @@ public class LoginView extends JPanel implements ActionListener, PropertyChangeL
         this.loginViewModel.addPropertyChangeListener(this);
 
 
-        // Set the main panel background
+        // Set the background color
         this.setBackground(new Color(30, 30, 30));
 
         // email panel with label and input field
@@ -65,7 +64,7 @@ public class LoginView extends JPanel implements ActionListener, PropertyChangeL
         passwordPanel.add(passwordLabel);
         passwordPanel.add(passwordInputField);
 
-        // Header panel with app name or icon
+        // Header panel contain "LOGIN"
         JPanel headerPanel = new JPanel();
         headerPanel.setBackground(new Color(19, 19, 223));
         JLabel headerLabel = new JLabel("LOGIN");
@@ -79,7 +78,7 @@ public class LoginView extends JPanel implements ActionListener, PropertyChangeL
         logIn.setForeground(Color.WHITE);
         logIn.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Sign-up link as a JLabel styled to look like a link
+        // Sign-up link as a JLabel styled
         JLabel signUpPrompt = new JLabel("Haven't signed up yet?");
         signUpPrompt.setForeground(Color.LIGHT_GRAY);
         signUpPrompt.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -92,7 +91,7 @@ public class LoginView extends JPanel implements ActionListener, PropertyChangeL
         signUpLink.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
-                    //loginController.switchToSignupView();
+                    loginController.switchToSignupView();
 
             }
         });
@@ -183,13 +182,6 @@ public class LoginView extends JPanel implements ActionListener, PropertyChangeL
         loginPanel.add(Box.createVerticalStrut(20));
         loginPanel.add(buttonsPanel);
 
-
-        /*
-        * The reason why I create a mainPanel instead of adding everything to login Panel is because if I add the
-        * headerPanel to login panel then there will be a space around the log in panel that is in a different color.
-        * I don't know how to remove that extra space between the log in panel and the header panel,
-        * so I just create another panel.
-        */
         // mainPanel
         final JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));

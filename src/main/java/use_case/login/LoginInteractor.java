@@ -36,4 +36,8 @@ public class LoginInteractor implements use_case.login.LoginInputBoundary {
             }
         }
     }
+
+    public void switchToSignUpView() {
+        loginOutput.switchToSignUpView();
+    }
 }

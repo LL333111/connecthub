@@ -5,6 +5,7 @@ import controller.ViewManagerModel;
 import controller.logged_in.LoggedInViewModel;
 import use_case.login.LoginOutputBoundary;
 import use_case.login.LoginOutputData;
+import controller.signup.SignupViewModel;
 
 /**
  * The Presenter for the Login Use Case.
@@ -14,13 +15,16 @@ public class LoginPresenter implements LoginOutputBoundary {
     private final LoginViewModel loginViewModel;
     // private final LoggedInViewModel loggedInViewModel;
     private final ViewManagerModel viewManagerModel;
+    private final SignupViewModel signupViewModel;
 
     public LoginPresenter(ViewManagerModel viewManagerModel,
                           LoggedInViewModel loggedInViewModel,
-                          LoginViewModel loginViewModel) {
+                          LoginViewModel loginViewModel,
+                          SignupViewModel signupViewModel) {
         this.viewManagerModel = viewManagerModel;
         // this.loggedInViewModel = loggedInViewModel;
         this.loginViewModel = loginViewModel;
+        this.signupViewModel = signupViewModel;
     }
 
     @Override
@@ -40,5 +44,10 @@ public class LoginPresenter implements LoginOutputBoundary {
         final LoginState loginState = loginViewModel.getState();
         loginState.setLoginError(error);
         loginViewModel.firePropertyChanged();
+    }
+
+    public void switchToSignUpView() {
+        viewManagerModel.setState(signupViewModel.getViewName());
+        viewManagerModel.firePropertyChanged();
     }
 }
